@@ -18,9 +18,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(findViewById(R.id.toolbar))
 
-        val dm = DataManager();
+      //  val dm = DataManager();
 
-        val listing = dm.courses.values.toList();
+      val listing = DataManager.courses.values.toList();
 
         listing.forEach{ currentItem -> Log.i("TestDataManager", currentItem.title)}
 

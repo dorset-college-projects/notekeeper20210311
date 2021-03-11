@@ -1,6 +1,8 @@
 package com.cairnfort.notekeeper202102
 
-class DataManager {
+//class DataManager {
+// object => means it becomes a singleton, created one and available globally throughout the app
+object DataManager {
 
     val courses = HashMap<String, CourseInfo>()
 
@@ -13,6 +15,21 @@ class DataManager {
     init {
 
         initializeCourses()
+        initializeNotes()
+    }
+
+    private fun initializeNotes() {
+       // TODO("Not yet implemented")
+        var course = CourseInfo("Kotlin", "Integers")
+
+        var note = NoteInfo(course,"My first Kotlin note","Kotlin is shorter than java 1")
+        var note2 = NoteInfo(course,"My second Kotlin note","Kotlin is shorter than java 2")
+        var note3 = NoteInfo(course,"My third Kotlin note","Kotlin is shorter than java 3")
+
+        notes.add(note)
+        notes.add(note2)
+        notes.add(note3)
+
     }
 
     private fun initializeCourses() {

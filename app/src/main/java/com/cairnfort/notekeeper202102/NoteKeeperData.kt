@@ -4,11 +4,15 @@ package com.cairnfort.notekeeper202102
 // var is for mutable properties (can be changed)
 // Note Kotlin is doing all the work in the constructor: (getting, setting assign)
 
-
-class CourseInfo(val courseId: String, val title: String) {
+// modify by prefixing with data - so it's treated as a data object instead of a class with behaviour
+data class CourseInfo(val courseId: String, val title: String) {
     override fun toString(): String {
         return title //super.toString()
     }
 }
 
-class NoteInfo(var course: CourseInfo, var title: String, var text: String)
+data class NoteInfo(var course: CourseInfo, var title: String, var text: String) {
+    override fun toString(): String {
+        return title
+    }
+}
