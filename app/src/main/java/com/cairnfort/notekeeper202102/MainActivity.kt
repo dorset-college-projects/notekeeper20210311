@@ -13,18 +13,27 @@ import kotlinx.android.synthetic.main.fragment_first.*
 
 class MainActivity : AppCompatActivity() {
 
+    private var notePosition = POSITION_NOT_SET
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(findViewById(R.id.toolbar))
 
+
+
+
+
       //  val dm = DataManager();
 
       val listing = DataManager.courses.values.toList();
-
         listing.forEach{ currentItem -> Log.i("TestDataManager", currentItem.title)}
 
 
+        notePosition = intent.getIntExtra(EXTRA_NOTE_POSITION, POSITION_NOT_SET)
+
+        Log.i("NOTEMESSAGES","Position is: " + notePosition.toString())
 
 
 
